@@ -14,8 +14,8 @@ RUN go build -o ./out/go-http-server .
 # Run the app in a small container as non root user
 FROM alpine:3.18
 
-WORKDIR /
-COPY --from=build /app/go-http-server/out/go-http-server /go-http-server
+WORKDIR /opt
+COPY --from=build /app/go-http-server/out/go-http-server /opt/go-http-server
 
 RUN adduser -D app
 USER app
@@ -28,4 +28,4 @@ ENV GITHUB_SHA=${GITHUB_SHA}
 ENV GITHUB_REF=${GITHUB_REF}
 
 # Run the binary program produced by `go install`
-CMD ["/go-http-server"]
+CMD ["/opt/go-http-server"]
