@@ -1,0 +1,9 @@
+# B"H
+services:
+  web:
+    image: go-http-server
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DEBUG_MODE: "false"
