@@ -4,6 +4,9 @@ name: Build and Packege
 
 on:
   workflow_dispatch:
+  push:
+    branches: 
+    - "*"
 
 env:
   IMAGE: go-http-server
@@ -27,12 +30,14 @@ jobs:
       run: |-
         docker build \
           --tag "$REGISTRY/$IMAGE:$GITHUB_SHA" \
+          --tag "$REGISTRY/$IMAGE:$GITHUB_REF_NAME" \
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
           --build-arg GITHUB_REF="$GITHUB_REF" \
           .
 
     # Tag the Docker image
     - name: Tag
+      if: ${{ github.ref == 'refs/heads/main' }}
       run: |-
         docker tag \
           "$REGISTRY/$IMAGE:$GITHUB_SHA" "$REGISTRY/$IMAGE:latest"
