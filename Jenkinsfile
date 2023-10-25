@@ -1,4 +1,4 @@
-pipelibe{
+pipeline{
 
     agent any
 
