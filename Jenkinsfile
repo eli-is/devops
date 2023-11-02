@@ -8,7 +8,7 @@ pipeline{
             steps {
                     echo 'building the application...'
                     script {
-                        sh docker build -t my--app:1.0 https://github.com/eli-is/devops.git:docker
+                        sh docker build -t my--app:1.0 https://github.com/eli-is/devops.git
                     }
              }
         }
