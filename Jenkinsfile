@@ -21,6 +21,8 @@ pipeline{
        stage ("deploy") {
             steps {
                        echo 'deploying the application...'
+
+                       sh "docker push eli7890/myapp:1.0 ."
              }
         }
 
