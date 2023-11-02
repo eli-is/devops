@@ -22,7 +22,7 @@ pipeline{
             steps {
                        echo 'deploying the application...'
 
-                       sh "docker push eli7890/myapp:1.0 ."
+                       sh "docker push eli7890/myapp:1.0"
              }
         }
 
