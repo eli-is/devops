@@ -7,7 +7,7 @@ pipeline{
        stage ("build") {
             steps {
                 echo 'building the application...'
-                sh "ls- la"
+               
                  sh "docker build -t myapp:1.0 ."
              }
         }
