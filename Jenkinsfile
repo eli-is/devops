@@ -8,7 +8,7 @@ pipeline{
             steps {
                     echo 'building the application...'
                     script {
-                        sh docker build -t myapp:1.0 .
+                        docker build -t myapp:1.0 .
                     }
              }
         }
