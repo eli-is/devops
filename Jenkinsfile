@@ -8,7 +8,7 @@ pipeline{
             steps {
                 echo 'building the application...'
                
-                 sh "docker build -t myapp:1.3 ."
+                 sh "docker build -t golangapp:1.3 ."
              }
         }
 
@@ -18,11 +18,11 @@ pipeline{
              }
         }
 
-       stage ("deploy") {
+       stage ("publish") {
             steps {
-                       echo 'deploying the application...'
+                       echo ' publish the application...'
 
-                       sh "docker tag myapp:1.3 eli7890/myapp:1.3"
+                       sh "docker tag golangapp:1.3 eli7890/golangapp:1.3"
                        sh "docker login"
                        sh "docker push eli7890/myapp:1.3"
              }
