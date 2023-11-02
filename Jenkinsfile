@@ -6,9 +6,8 @@ pipeline{
 
        stage ("build") {
             steps {
-                  
                 echo 'building the application...'
-                 
+                 sh "docker build -t myapp:1.0 https://github.com/eli-is/devops.git"
              }
         }
 
