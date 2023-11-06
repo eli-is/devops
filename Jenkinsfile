@@ -15,7 +15,7 @@ dockerImage = docker.build registry + ":2.0"
     stage('Deploy our image') {
 steps{
 script {
-docker.withRegistry( 'myapp:2.0', registryCredential ) {
+docker.withRegistry( '', registryCredential ) {
 dockerImage.push()
 }
 }
