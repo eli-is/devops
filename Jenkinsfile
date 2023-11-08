@@ -1,7 +1,7 @@
 pipeline {
 environment {
-registry = "eli7890/myapp"
-registryCredential = 'dockerhub_id'
+registry = "696353136210.dkr.ecr.eu-north-1.amazonaws.com/my-app"
+registryCredential = 'dockerhub_idaws'
 }
 agent any
 stages {
