@@ -1,6 +1,6 @@
 pipeline {
 environment {
-registry = "696353136210.dkr.ecr.eu-north-1.amazonaws.com"
+registry = "696353136210.dkr.ecr.eu-north-1.amazonaws.com/my-app"
 registryCredential = 'dockerhub_idaws'
 }
 agent any
